@@ -1,0 +1,8 @@
+<div >
+    <h3>Ejemplo 2</h3>
+    <hr />
+    <select ng-model="UserActual"
+            ng-options="user as getFullName(user) for user in users" class="form-control"></select>
+    <br>
+    <p>Usuario Actual : {{ UserActual | json }}</p>
+</div>

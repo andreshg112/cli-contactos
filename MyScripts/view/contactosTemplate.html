@@ -1,0 +1,125 @@
+<div >
+
+    <p><a data-ng-click="showadd()" href="javascript:;" class="btn btn-primary">Nuevo Contacto</a></p>
+
+    
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <h4 class="modal-title" id="H2">Ver Contactos</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="Id" class="col-sm-3 control-label">Nombre</label>
+                             <div class="col-sm-9">
+                             {{ Contact.nombre }}
+                             </div>
+                            </div>
+                        <div class="form-group">
+                            <label for="Telefono" class="col-sm-3 control-label">Telefono</label>
+                            <div class="col-sm-9">
+                             {{ Contact.telefono }}
+                             </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"
+                            />
+                        <input type="button" class="btn btn-primary" value="Submit"
+                            ng-click="submitForm()" />
+                    </div>
+                </div>
+            </div>
+    </div>
+        </div>
+
+    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    <h4 class="modal-title" id="myModalLabel" ng-hide="editMode">Add Contacto</h4>
+                    <h4 class="modal-title" id="H1" ng-show="editMode">Edit Contacto</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            
+                            <label for="Id" class="col-sm-3 control-label">Id</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="Id" name="Id" ng-model="Contact.id" class="form-control" readonly="true" />
+                            </div>
+                            
+                            <label for="Name" class="col-sm-3 control-label">Nombre</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="Name" name="Nombre" ng-model="Contact.nombre" class="form-control" />
+                            </div>
+                            
+                            <label for="Id" class="col-sm-3 control-label">Telefono</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="telefono" name="Telefono" ng-model="Contact.telefono" class="form-control" />
+                            </div>
+                            
+                      </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" ng-click="cancel()" />
+
+                         <span data-ng-hide="editMode">
+                         <input type="submit" value="Add" data-ng-click="add()" class="btn btn-primary" />
+                         </span>
+                         <span data-ng-show="editMode">
+                         <input type="submit" value="Update" data-ng-click="update()" class="btn btn-primary" />
+                         </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" style="width: 800px">
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr data-ng-repeat="contact in Contacts track by $index">
+                    <td>
+                        {{ contact.id }}
+                    </td>
+                    <td>
+                        {{ contact.nombre }}
+                    </td>
+                    <td>{{ contact.telefono }}</td>
+                    <td>
+                        <p>
+                             <a data-ng-click="get(contact)" href="javascript:;">Ver</a> |
+                             <a data-ng-click="edit(contact)" href="javascript:;">Edit</a> |
+                             <a data-ng-click="showconfirm(contact)" href="javascript:;">Delete</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+       </div>
+    </div>
+
+ 
+</div>

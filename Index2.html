@@ -1,0 +1,58 @@
+﻿<!--http://www.dotnetcurry.com/showarticle.aspx?ID=1054-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  
+   <title></title>
+    
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    
+
+  <script type="text/javascript" src="Crud/Module.js"></script>
+  <script type="text/javascript" src="Crud/Services.js"></script>
+  <script type="text/javascript" src="Crud/ShowEmployeesController.js"></script> 
+  <script type="text/javascript" src="Crud/AddEmpController.js"></script> 
+  <script type="text/javascript" src="Crud/EditEmployeeController.js"></script> 
+  <script type="text/javascript" src="Crud/DeleteEmployeeController.js"></script>   
+
+ 
+</head>
+<body>
+
+</body>
+</html>
+<h2>Index</h2>
+
+
+
+<hr>
+<link href="/Content/bootstrap.min.css" rel="stylesheet" />
+
+<body ng-app="ApplicationModule">
+     <div class="container">
+        <div>
+            <div>
+                <table>
+                    <tr>
+                        <td><a href="#showemployees"> Show Employees </a></td>
+                        <td> &nbsp; </td>
+                        <td><a href="#addemployee"> Add Employee </a></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+      
+</body>
+ 
