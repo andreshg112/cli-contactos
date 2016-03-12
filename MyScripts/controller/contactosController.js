@@ -54,7 +54,7 @@ app.controller('contactosController', function ($scope, contactosService) {
         Contacto.telefono = $scope.Contact.telefono;
         var promisePost = contactosService.post(Contacto);
         promisePost.then(function (d) {
-            $scope.Contact.telefono = d.data.telefono;
+            
             loadRecords();
         }, function (err) {
             alert("Some Error Occured " + JSON.stringify(err));
